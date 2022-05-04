@@ -1,0 +1,24 @@
+  
+<app-post-list (notifyme)="display($event)"></app-post-list>
+<a class="btn btn-primary w-100 my-2" (click)="tableDisplay()">{{count}}</a>
+<table class="table table-striped table-hover table-bordered" *ngIf="dataVisibility">
+  <thead class="text-white bg-dark">
+      <tr>
+          <td>PostName</td>
+          <td>PostDescription</td>
+          <td>PostedDate</td>
+          <td>PostedImage</td>
+        
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let item of likedArray">
+          <td class="w-25">{{item.PostName}}</td>
+          <td class="w-25">{{item.PostDescription}}</td>
+          <td class="w-25">{{item.PostedDate}}</td>
+          <td class="w-25"><img [src]="item.PostedImage" class="w-25"/></td>
+          
+      </tr>
+  </tbody>
+</table>
+
